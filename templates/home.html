@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Domain Check</title>
+</head>
+<body>
+    <center>
+<form method="post" id="domainCheck-form">
+		<input type="text" name="domainCheck" id="domainCheck" autofocus spellcheck="false">
+		<button type="submit">submit</button>
+	</form>
+
+    <p id="checkResults"></p>
+</center>
+
+		<!--Jquery Cdn -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+		crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	$(document).on('submit','#domainCheck-form',function(e)
+				{
+	console.log('hello');
+	e.preventDefault();
+	$.ajax({
+		type:'POST',
+		url:'/',
+		data:{
+		checkDomain:$("#domainCheck").val()
+		},
+		success:function(data)
+		{
+		//alert(data);
+        $("#checkResults").html(data);
+		}
+	})
+	});
+</script>
+
+</body>
+</html>
