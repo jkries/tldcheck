@@ -18,9 +18,9 @@ def home():
         checkDomain = request.form.get("checkDomain")
         domainOpen = is_domain_available(checkDomain)
         if domainOpen:
-            checkData = checkDomain + " is AVAILABLE!"
+            checkData = checkDomain + " is AVAILABLE! &#9989;"
         else:
-            checkData = checkDomain + " is taken."
+            checkData = checkDomain + " is taken. &#10060;"
         return checkData
     return render_template('home.html', checkData = checkData)
  
