@@ -4,39 +4,57 @@
 	<title>Domain Check</title>
 	<style>
 	.available{
-			border: 2px solid green;
-			border-radius: 12px;
-			padding: 5px;
-			margin: 3px;
-			background-color: #90EE90;
-			width:100%;
-			max-width: 450px;
-			}
+		font-size: 24px;
+		font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+		border: 2px solid green;
+		border-radius: 12px;
+		padding: 15px;
+		margin: 3px;
+		background-color: #90EE90;
+		max-width: 450px;
+		text-align: center;display: inline-block;
+		}
 	.taken{
-			border: 2px solid red;
-			border-radius: 12px;
-			padding: 5px;
-			margin: 3px;
-			background-color: #FFCCCB;
-			width:100%;
-			max-width: 450px;
-			}
-			.mainForm{
-				margin: 10px;
-			}
-			.mainInput{
-				width:100%;
-				max-width: 500px;
-				border-radius: 12px;
-				font-size: 24px;
-			}
+		font-size: 24px;
+		font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+		border: 2px solid red;
+		border-radius: 12px;
+		padding: 15px;
+		margin: 3px;
+		background-color: #FFCCCB;
+		max-width: 450px;
+		text-align: center;
+		text-align: center;display: inline-block;
+		}
+	.mainForm{
+		margin: 10px;
+		}
+	.mainInput{
+		width:100%;
+		max-width: 600px;
+		padding: 15px;
+		margin: 3px;
+		border-radius: 12px;
+		font-size: 24px;
+		text-align: center;
+		font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+		}
+	.submitButton{
+		font-size: 18px;
+		background-color: #3552FF;
+		color: white;
+		padding: 15px 25px;
+		margin:4px;
+		border-radius: 12px;
+		text-decoration: none;
+		}
 	</style>
 </head>
 <body>
     <center>
 <form method="post" id="domainCheck-form" class="mainForm">
-		<input type="text" name="domainCheck" class="mainInput" id="domainCheck" autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-		<button type="submit">submit</button>
+		<input type="text" placeholder="Please type a domain name to check availability" name="domainCheck" class="mainInput" id="domainCheck" autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+		<br><button class="submitButton" type="submit">Check Now!</button>
 	</form>
 
     <p id="checkResults"></p>
@@ -52,6 +70,7 @@
 				{
 	console.log('hello');
 	e.preventDefault();
+		$("#checkResults").html("<img src='/static/loading.gif'>");
 	$.ajax({
 		type:'POST',
 		url:'/',
