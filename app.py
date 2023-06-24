@@ -26,9 +26,9 @@ def home():
             checkDomain = checkDomain + ".com"
         domainOpen = is_domain_available(checkDomain)
         if domainOpen:
-            checkData = "<div class='available'>" + checkDomain + " is AVAILABLE! &#9989;</div>"
+            checkData = "<div class='available'><strong>" + checkDomain + "</strong> is AVAILABLE! &#9989;</div>"
         else:
-            checkData = "<div class='taken' title='"+ expirationDate +"'>" + checkDomain + " is taken. &#10060;</div>"
+            checkData = "<div class='taken' title='"+ expirationDate +"'><strong>" + checkDomain + "</strong> is taken. &#10060;<br><small>Expires "+ expirationDate[:10] +"</small></div>"
         return checkData
     return render_template('home.html', checkData = checkData)
  
