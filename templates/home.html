@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name = "viewport" content = "width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no">
+	<link rel="icon" 
+      type="image/png" 
+      href="/static/favicon.png">
 	<title>Domain Check</title>
 	<style>
+		body{
+			margin: 0px;
+		}
 	.available{
 		font-size: 24px;
 		font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 		border: 2px solid green;
 		border-radius: 12px;
 		padding: 15px;
-		margin: 3px;
+		margin: 3px auto 3px auto;
 		background-color: #90EE90;
-		max-width: 450px;
-		text-align: center;display: inline-block;
+		max-width: 500px;
+		text-align: center;
+		display: inline-block;
 		}
 	.taken{
 		font-size: 24px;
@@ -20,20 +28,23 @@
 		border: 2px solid red;
 		border-radius: 12px;
 		padding: 15px;
-		margin: 3px;
+		margin: 3px auto 3px auto;
 		background-color: #FFCCCB;
-		max-width: 450px;
+		max-width: 500px;
 		text-align: center;
-		text-align: center;display: inline-block;
+		display: inline-block;
+		}
+	a:link, a:visited, a:hover, a:active{
+		text-decoration: none;
 		}
 	.mainForm{
-		margin: 10px;
+		margin: 5px;
 		}
 	.mainInput{
 		width:100%;
 		max-width: 600px;
-		padding: 15px;
-		margin: 3px;
+		padding: 15px 0px 15px 0px;
+		margin: 0px;
 		border-radius: 12px;
 		font-size: 24px;
 		text-align: center;
@@ -53,7 +64,7 @@
 <body>
     <center>
 <form method="post" id="domainCheck-form" class="mainForm">
-		<input type="text" placeholder="Please type a domain name to check availability" name="domainCheck" class="mainInput" id="domainCheck" autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+		<input type="text" placeholder="Type a domain name.." name="domainCheck" class="mainInput" id="domainCheck" autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
 		<br><button class="submitButton" type="submit">Check Now!</button>
 	</form>
 
